@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\Crouch.js" />
      <Compile Include="Assets\FootSteps.js" />
+     <Compile Include="Assets\RayCast.js" />
      <Compile Include="Assets\StoneThrow.js" />
      <Compile Include="Assets\WalkEffect.js" />
      <Compile Include="Assets\camShake.js" />
