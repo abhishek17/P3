@@ -18,13 +18,10 @@ public class PlayerSight: MonoBehaviour
 	RaycastHit hit2;
 	RaycastHit hit3;
 	
-	void Awake()
-	{
-	v = new Vector3(transform.position.x ,transform.position.y+0.5f,transform.position.z);
-	v2 = new Vector3(transform.position.x ,transform.position.y,transform.position.z);
-	}
 	
 	void  Update (){
+		v = new Vector3(transform.position.x ,transform.position.y+0.5f,transform.position.z);
+		v2 = new Vector3(transform.position.x ,transform.position.y,transform.position.z);
 		
 		float theta = transform.eulerAngles.y + 90+temp;
 		float theta2 = transform.eulerAngles.y + 90-temp;
