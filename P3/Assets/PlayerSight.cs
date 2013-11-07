@@ -17,9 +17,14 @@ public class PlayerSight: MonoBehaviour
 	RaycastHit hit;
 	RaycastHit hit2;
 	RaycastHit hit3;
-	
+	public bool inSight = false;
+	bool folp = false;
+	float t= 10;
+	float tt = 10;
+	bool ttimer = false;
 	
 	void  Update (){
+		
 		v = new Vector3(transform.position.x ,transform.position.y+0.5f,transform.position.z);
 		v2 = new Vector3(transform.position.x ,transform.position.y,transform.position.z);
 		
@@ -46,7 +51,8 @@ public class PlayerSight: MonoBehaviour
 				if (hit.collider.gameObject.name == "First Person Controller")
 					{
 						audio.Play();
-
+						inSight = true;
+	
 					}
 				}
 			if (Physics.Raycast(v2, dir2.normalized, out hit2, 1000))
@@ -55,14 +61,18 @@ public class PlayerSight: MonoBehaviour
 				if (hit2.collider.gameObject.name == "First Person Controller")
 				{
 					audio.Play();
+					inSight = true;
+
 				}
 			}
 			if (Physics.Raycast(v, dir3.normalized, out hit3, 1000))
 			{
-				print ("green "+hit3.collider.gameObject.name);
+				//print ("green "+hit3.collider.gameObject.name);
 				if (hit3.collider.gameObject.name == "First Person Controller")
 				{
 					audio.Play();
+					inSight = true;
+
 				}
 			}
 			temp++;
@@ -73,5 +83,31 @@ public class PlayerSight: MonoBehaviour
 			temp = -30;
 			temp2 = 30;
 		}
+		if(inSight == true)
+			ttimer = true;
+		
+		if(ttimer == true)
+			if(tt>0)
+				tt = tt - Time.deltaTime;
+			else
+				ttimer = false;
+		inSight = false;
+		calling();
+	}
+	void calling()
+	{	
+		NavMeshAI nmai = (NavMeshAI)this.GetComponent(typeof(NavMeshAI));
+		Follow fol = (Follow)this.GetComponent(typeof(Follow));
+			if(ttimer == true)
+				{
+					print (tt);
+					nmai.moveToPlayer();
+					fol.followStuff();
+				}
+			else
+			{
+				nmai.agent.speed = 0;
+				tt = t;
+			}
 	}
 }
