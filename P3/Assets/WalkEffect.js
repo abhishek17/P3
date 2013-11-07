@@ -4,11 +4,23 @@
  var bobbingSpeed = 0.17; 
  var bobbingAmount = 0.08; 
  var midpoint = 0.68; 
+ 
+ private var timerx = 0.0; 
+ var bobbingSpeedx = 0.13; 
+ var bobbingAmountx = 0.5; 
+ var midpointx = 0.68; 
+ 
  private var waveslice:float;
+ private var waveslicex:float;
+ 
 private var horizontal:float;
 private var vertical:float;
+
 private var translateChange:float;
+private var translateChangex:float;
+
 private var totalAxes:float;
+private var totalAxesx:float;
 function Update () { 
     waveslice = 0.0; 
     horizontal = Input.GetAxis("Horizontal"); 
@@ -18,10 +30,16 @@ function Update () {
     } 
     else { 
        waveslice = Mathf.Sin(timer); 
+       waveslicex = Mathf.Sin(timerx);
+       
        timer = timer + bobbingSpeed; 
+       timerx = timerx + bobbingSpeedx;
        if (timer > Mathf.PI * 2) { 
           timer = timer - (Mathf.PI * 2); 
        } 
+       if (timerx > Mathf.PI * 2) { 
+          timerx = timerx - (Mathf.PI * 2); 
+       }
     } 
     if (waveslice != 0) { 
        translateChange = waveslice * bobbingAmount; 
@@ -29,9 +47,36 @@ function Update () {
        
        totalAxes = Mathf.Clamp (totalAxes, 0.0, 1.0); 
        translateChange = totalAxes * translateChange; 
+       if (!Input.GetKey("v"))
        transform.localPosition.y = midpoint + translateChange; 
+        
     } 
     else { 
+    if (!Input.GetKey("v"))
        transform.localPosition.y = midpoint; 
+      
     } 
+    
+    
+     if (waveslicex != 0) { 
+       translateChangex = waveslicex * bobbingAmountx; 
+       totalAxesx = Mathf.Abs(horizontal) + Mathf.Abs(vertical); 
+       
+       totalAxesx = Mathf.Clamp (totalAxesx, 0.0, 1.0); 
+       translateChangex = totalAxesx * translateChangex; 
+       //transform.localPosition.y = midpoint + translateChange; 
+        if (Input.GetKey("v"))
+        	{
+        		transform.localPosition.x = midpointx + translateChangex;	
+        	}
+    } 
+    else { 
+       //transform.localPosition.y = midpoint; 
+       if (Input.GetKey("v"))
+       {
+       		transform.localPosition.x = midpointx; 
+       }
+    } 
+    
+    
  }
