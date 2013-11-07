@@ -1,12 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerSight.cs">
-    <Files>
-      <File FileName="Assets\PlayerSight.cs" Line="105" Column="24" />
-      <File FileName="Assets\Follow.cs" Line="25" Column="4" />
-      <File FileName="Assets\NavMeshAI.cs" Line="21" Column="5" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

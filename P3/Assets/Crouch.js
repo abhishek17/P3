@@ -48,7 +48,7 @@ function Update(){
     }
     if (Input.GetKey("c")){ // press C to crouch
     	
-        h = 0.8 * height;
+        h = 0.6 * height;
         speed = crchSpeed; // slow down when crouching
         voice=crchSound;
         pitch=crchPitch;
