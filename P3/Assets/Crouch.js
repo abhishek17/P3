@@ -40,7 +40,7 @@ function Update(){
     if (Input.GetKey("v")){ // press v to crawl
      
         h = 0.05 * height;
-        r=0.8*radius;
+        r=0.3*radius;
         speed = crawlSpeed; // slow down when crouching
         voice=crchSound;
         pitch=crchPitch;
