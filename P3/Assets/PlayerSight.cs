@@ -22,6 +22,15 @@ public class PlayerSight: MonoBehaviour
 	float t= 10;
 	float tt = 10;
 	bool ttimer = false;
+	GameObject playerg;
+	Transform player;
+	float dist;
+	
+	void Awake()
+	{
+		 playerg = GameObject.FindGameObjectWithTag("Player");
+		 player = playerg.transform;
+	}
 	
 	void  Update (){
 		
@@ -93,13 +102,25 @@ public class PlayerSight: MonoBehaviour
 				ttimer = false;
 		inSight = false;
 		calling();
+		dist = Vector3.Distance(this.transform.position, player.transform.position);
+		print (dist);
+	}
+	void OnTriggerEnter(Collider other)
+	{
+   		if(other.gameObject.tag=="Player" &&  !(Input.GetKey("v")))
+    	inSight = true;   
 	}
 	void calling()
 	{	
 		NavMeshAI nmai = (NavMeshAI)this.GetComponent(typeof(NavMeshAI));
 		Follow fol = (Follow)this.GetComponent(typeof(Follow));
+
 			if(ttimer == true)
 				{
+					if(dist<2)
+					{
+						Application.Quit();
+					}
 					print (tt);
 					nmai.moveToPlayer();
 					fol.followStuff();
