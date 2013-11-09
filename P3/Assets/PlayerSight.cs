@@ -25,15 +25,26 @@ public class PlayerSight: MonoBehaviour
 	GameObject playerg;
 	Transform player;
 	float dist;
+	Vector3 enemyStart;
+	bool moving;
+	NavMeshAI nmai;
+	Follow fol;
+
 	
-	void Awake()
+	void Start()
 	{
+		//print ("Hello Start");
+		 nmai = (NavMeshAI)this.GetComponent(typeof(NavMeshAI));
+		 fol = (Follow)this.GetComponent(typeof(Follow));
 		 playerg = GameObject.FindGameObjectWithTag("Player");
 		 player = playerg.transform;
+		 enemyStart = new Vector3(transform.position.x ,transform.position.y,transform.position.z);
 	}
 	
 	void  Update (){
-		
+		//print (enemyStart.x);
+		print (Vector3.Distance(this.transform.position, enemyStart));
+
 		v = new Vector3(transform.position.x ,transform.position.y+0.5f,transform.position.z);
 		v2 = new Vector3(transform.position.x ,transform.position.y,transform.position.z);
 		
@@ -103,22 +114,30 @@ public class PlayerSight: MonoBehaviour
 		inSight = false;
 		calling();
 		dist = Vector3.Distance(this.transform.position, player.transform.position);
-		print (dist);
+		if(dist<6 && Input.GetKeyUp("v"))
+		{
+			//print ("Entered");
+			ttimer = true;
+		}
+		//print (dist);
 	}
 	void OnTriggerEnter(Collider other)
 	{
-   		if(other.gameObject.tag=="Player" &&  !(Input.GetKey("v")))
+		//print ("Entered collision");
+   		if(other.gameObject.tag=="Player" &&  (!(Input.GetKey("v"))))
     	inSight = true;   
 	}
 	void calling()
 	{	
-		NavMeshAI nmai = (NavMeshAI)this.GetComponent(typeof(NavMeshAI));
-		Follow fol = (Follow)this.GetComponent(typeof(Follow));
+
 
 			if(ttimer == true)
 				{
-					if(dist<2)
+				moving = true;
+				animation.Stop();
+					if(dist<5)
 					{
+						//print ("Yay");
 						Application.Quit();
 					}
 					print (tt);
@@ -127,8 +146,21 @@ public class PlayerSight: MonoBehaviour
 				}
 			else
 			{
-				nmai.agent.speed = 0;
+				if(moving == true)
+				{
+					nmai.agent.SetDestination(enemyStart);
+					//fol.followStuff();
+					if(Vector3.Distance(this.transform.position, enemyStart)<2)
+			    	{
+					
+						moving = false;
+						animation.Play();
+						ttimer = false;
+					}
+				}
+				//nmai.agent.speed = 0;
 				tt = t;
 			}
 	}
+
 }
