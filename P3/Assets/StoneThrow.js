@@ -34,6 +34,9 @@ if(Input.GetKeyDown ("f"))
 	cube5.AddComponent(Rigidbody);
 	cube5.transform.localScale=Vector3(0.25,0.25,0.25);
 	cube5.rigidbody.useGravity=true;
+	cube5.AddComponent(Distract);
+	cube5.transform.position = transform.position + Vector3(1,0,0);
+	
 	}
 	
 	if(Input.GetKeyUp("f"))

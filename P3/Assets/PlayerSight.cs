@@ -43,7 +43,7 @@ public class PlayerSight: MonoBehaviour
 	
 	void  Update (){
 		//print (enemyStart.x);
-		print (Vector3.Distance(this.transform.position, enemyStart));
+		//print (Vector3.Distance(this.transform.position, enemyStart));
 
 		v = new Vector3(transform.position.x ,transform.position.y+0.5f,transform.position.z);
 		v2 = new Vector3(transform.position.x ,transform.position.y,transform.position.z);
