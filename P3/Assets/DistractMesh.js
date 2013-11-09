@@ -35,6 +35,7 @@ function Update()
 			{
 			Debug.Log("dsfsdv");
 			gameO.animation.Play();
+			pause=false;
 			}
 			
 			//newPositionx = Mathf.SmoothDamp(gameO.transform.position.x, pos.enemyStart.x,
@@ -54,6 +55,7 @@ function OnTriggerEnter (other : Collider) {
 		{
 			gameO=other.gameObject;
 			pause=true;
+			once=true;
 			//Debug.Log(Location);
 			other.animation.Stop();
 			
