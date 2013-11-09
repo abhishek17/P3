@@ -47,6 +47,7 @@
      <Compile Include="Assets\Follow.cs" />
      <Compile Include="Assets\NavMeshAI.cs" />
      <Compile Include="Assets\PlayerSight.cs" />
+     <Compile Include="Assets\Restart.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />

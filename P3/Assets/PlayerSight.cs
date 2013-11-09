@@ -30,6 +30,7 @@ public class PlayerSight: MonoBehaviour
 	float dist;
 	Vector3 enemyStart;
 	bool moving;
+	float enemySpeed = 10;
 	NavMeshAI nmai;
 	Follow fol;
 
@@ -151,12 +152,13 @@ public class PlayerSight: MonoBehaviour
 				{
 				moving = true;
 				animation.Stop();
-					if(dist<5)
+					if(dist<2)
 					{
-						//print ("Yay");
-						Application.Quit();
+						print ("Yay");
+						Application.LoadLevel("Game_over");
 					}
-					print (tt);
+					//print (tt);
+					nmai.agent.speed = enemySpeed;
 					nmai.moveToPlayer();
 					fol.followStuff();
 				}
