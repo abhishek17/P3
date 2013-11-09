@@ -1,7 +1,7 @@
-﻿var walkSpeed: float = 7; // regular speed
-var crchSpeed: float = 3; // crouching speed
-var crawlSpeed: float = 1.0f; // crouching speed
-var runSpeed: float = 20; // run speed
+﻿var walkSpeed: float = 4; // regular speed
+var crchSpeed: float = 2; // crouching speed
+var crawlSpeed: float = 0.5f; // crouching speed
+var runSpeed: float = 8; // run speed
 var walkSound:float =0.5f; 
 var crchSound:float =0.05f;
 var runSound:float=1.0f;
@@ -59,6 +59,8 @@ function Update(){
         //temp=0.03;
     }
     chMotor.movement.maxForwardSpeed = speed; // set max speed
+    chMotor.movement.maxSidewaysSpeed = speed;
+    chMotor.movement.maxBackwardsSpeed = speed;
     var lastHeight = ch.height; // crouch/stand up smoothly
     
     ch.height = Mathf.Lerp(ch.height, h, 5*Time.deltaTime);
