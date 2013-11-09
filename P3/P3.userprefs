@@ -1,15 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DistractMesh.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DayNight.js">
     <Files>
-      <File FileName="Assets\DistractMesh.js" Line="58" Column="14" />
       <File FileName="Assets\PlayerSight.cs" Line="1" Column="1" />
+      <File FileName="Assets\DistractMesh.js" Line="15" Column="1" />
       <File FileName="Assets\Follow.cs" Line="1" Column="1" />
       <File FileName="Assets\NavMeshAI.cs" Line="1" Column="1" />
       <File FileName="Assets\Crouch.js" Line="1" Column="1" />
       <File FileName="Assets\StoneThrow.js" Line="1" Column="1" />
       <File FileName="Assets\Distract.js" Line="1" Column="1" />
       <File FileName="Assets\EnemyTrack.js" Line="1" Column="1" />
+      <File FileName="Assets\DayNight.js" Line="5" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
