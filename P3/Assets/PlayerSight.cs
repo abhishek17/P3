@@ -154,7 +154,7 @@ public class PlayerSight: MonoBehaviour
 				animation.Stop();
 					if(dist<2)
 					{
-						print ("Yay");
+						//print ("Yay");
 						Application.LoadLevel("Game_over");
 					}
 					//print (tt);
