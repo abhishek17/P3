@@ -11,9 +11,9 @@ var send : DistractMesh;
 function Start () 
 {
 //Debug.Log("Hellou");
-enemy = GameObject.Find("Enemy");
+//enemy = GameObject.Find("Enemy");
 tr = transform;
-enemyT=enemy.transform;
+//enemyT=enemy.transform;
 
 } 
 function OnCollisionEnter (col : Collision)
