@@ -2,7 +2,7 @@
 var colors : Color[];
 var colorr:int=0;
 private var startTime:float=0.0f;
-private var speed:float=0.000005f;
+private var speed:float=0.00000005f;
 function Start () {
 
 }
