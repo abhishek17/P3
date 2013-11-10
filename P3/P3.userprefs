@@ -1,7 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerSight.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Crouch.js">
     <Files>
+      <File FileName="Assets\Crouch.js" Line="85" Column="43" />
       <File FileName="Assets\PlayerSight.cs" Line="201" Column="18" />
       <File FileName="Assets\DayNight.js" Line="1" Column="1" />
       <File FileName="Assets\FootSteps.js" Line="1" Column="1" />
@@ -9,7 +10,6 @@
       <File FileName="Assets\DistractMesh.js" Line="1" Column="1" />
       <File FileName="Assets\Follow.cs" Line="1" Column="1" />
       <File FileName="Assets\NavMeshAI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Crouch.js" Line="1" Column="1" />
       <File FileName="Assets\StoneThrow.js" Line="1" Column="1" />
       <File FileName="Assets\Distract.js" Line="1" Column="1" />
       <File FileName="Assets\EnemyTrack.js" Line="1" Column="1" />

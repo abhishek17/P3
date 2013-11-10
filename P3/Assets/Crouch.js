@@ -8,6 +8,7 @@ var runSound:float=1.0f;
 var crchPitch:float=1.0f;
 var walkPitch:float=1.3f;
 var runPitch:float=1.8f;
+var toggle=false;
 
 private var chMotor: CharacterMotor;
 private var ch: CharacterController;
@@ -22,40 +23,55 @@ function Start(){
     ch = GetComponent(CharacterController);
  height = ch.height;
  radius = ch.radius;
-}
- 
-function Update(){
- 
-    var h = height;
+ var h = height;
     var r = radius;
     var speed = walkSpeed;
     var temp:float=0;
     var voice=walkSound;
     var pitch=walkPitch;
+}
+ 
+function Update(){
+ 
+ 	if(!toggle)
+ 	{
+    h = height;
+    r = radius;
+    speed = walkSpeed;
+    
+    voice=walkSound;
+    pitch=walkPitch;
+    }
+    else
+    {
+    h = 0.6 * height;
+    r = radius;
+        speed = crchSpeed; // slow down when crouching
+        voice=crchSound;
+        pitch=crchPitch;
+    }
     if (ch.isGrounded && Input.GetKey("left shift") || Input.GetKey("right shift")){
      voice=runSound;
         speed = runSpeed;
         pitch=runPitch;
     }
     if (Input.GetKey("v")){ // press v to crawl
-     
+     if (Input.GetKey("w")||Input.GetKey("a")||Input.GetKey("s")||Input.GetKey("d")){
         h = 0.05 * height;
         r=0.3*radius;
         speed = crawlSpeed; // slow down when crouching
         voice=crchSound;
         pitch=crchPitch;
-        temp=0.03;
-    }
-    if (Input.GetKeyUp("v"))
-    {
-    temp=-0.03;
-    }
-    if (Input.GetKey("c")){ // press C to crouch
+        
+    }}
+    
+    if (Input.GetKeyDown("c")){ // press C to crouch
      
-        h = 0.6 * height;
-        speed = crchSpeed; // slow down when crouching
-        voice=crchSound;
-        pitch=crchPitch;
+     	if(!toggle)
+     		toggle=true;
+     	else
+     		toggle=false;
+        
         //temp=0.03;
     }
     chMotor.movement.maxForwardSpeed = speed; // set max speed
@@ -66,7 +82,7 @@ function Update(){
     ch.height = Mathf.Lerp(ch.height, h, 5*Time.deltaTime);
     ch.radius = Mathf.Lerp(ch.radius, r, 5*Time.deltaTime);
     
-    tr.position.y += (ch.height-lastHeight+temp)/2; // fix vertical position
+    tr.position.y += (ch.height-lastHeight)/2; // fix vertical position
     audio.volume=voice;
     audio.pitch=pitch;
     }
