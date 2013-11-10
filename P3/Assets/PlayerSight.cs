@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerSight: MonoBehaviour 
 {
-
+	private bool once=false;
 	private int end = 30;
 	private int temp = -30;
 	private int temp2 = 30;
@@ -79,8 +79,14 @@ public class PlayerSight: MonoBehaviour
 				if (hit.collider.gameObject.name == "First Person Controller")
 					{
 					print ("1");
+					if(once==false)
+					{
 						audio.Play();
+						once=true;
+					}
+						
 						inSight = true;
+					
 	
 					}
 				}
@@ -89,10 +95,15 @@ public class PlayerSight: MonoBehaviour
 				
 				if (hit2.collider.gameObject.name == "First Person Controller")
 				{
-					print ("2");
+					if(once==false)
+					{
+						once=true;
 					audio.Play();
+					}
+					print ("2");
+						
 					inSight = true;
-
+					
 				}
 			}
 			if (Physics.Raycast(v, dir3.normalized, out hit3, 1000))
@@ -100,10 +111,15 @@ public class PlayerSight: MonoBehaviour
 				
 				if (hit3.collider.gameObject.name == "First Person Controller")
 				{
-					print ("3");
+					if(once==false)
+					{
+						once=true;
 					audio.Play();
+					}
+					print ("3");
+						
 					inSight = true;
-
+					
 				}
 			}
 		//	if (Physics.Raycast(v3, dir4.normalized, out hit4, 1000))
@@ -135,6 +151,7 @@ public class PlayerSight: MonoBehaviour
 			else
 				ttimer = false;
 		inSight = false;
+		//once=false;
 		calling();
 		dist = Vector3.Distance(this.transform.position, player.transform.position);
 		if(dist<6 && Input.GetKeyUp("v"))
@@ -181,6 +198,7 @@ public class PlayerSight: MonoBehaviour
 						moving = false;
 						animation.Play();
 						ttimer = false;
+						once=false;
 					}
 				}
 				//nmai.agent.speed = 0;
