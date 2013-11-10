@@ -11,7 +11,7 @@ function Update () {
     RenderSettings.ambientLight = Color.Lerp (RenderSettings.ambientLight, Color.white, (Time.time - startTime) * speed);
  
  	if(RenderSettings.ambientLight ==Color.white)
- 	Debug.Log("Ye Ye");
+ 	//Debug.Log("Ye Ye");
     //this is just to test
     //gameO.transform.position = Vector3.Lerp(gameO.transform.position, pos.enemyStart, (Time.time - startTime) * speed);
  
