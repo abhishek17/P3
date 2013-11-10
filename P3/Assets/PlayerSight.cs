@@ -75,8 +75,10 @@ public class PlayerSight: MonoBehaviour
 
 			if (Physics.Raycast(v, dir.normalized, out hit, 1000))
 			{
+				
 				if (hit.collider.gameObject.name == "First Person Controller")
 					{
+					print ("1");
 						audio.Play();
 						inSight = true;
 	
@@ -84,9 +86,10 @@ public class PlayerSight: MonoBehaviour
 				}
 			if (Physics.Raycast(v2, dir2.normalized, out hit2, 1000))
 			{
-
+				
 				if (hit2.collider.gameObject.name == "First Person Controller")
 				{
+					print ("2");
 					audio.Play();
 					inSight = true;
 
@@ -94,24 +97,27 @@ public class PlayerSight: MonoBehaviour
 			}
 			if (Physics.Raycast(v, dir3.normalized, out hit3, 1000))
 			{
-				//print ("green "+hit3.collider.gameObject.name);
+				
 				if (hit3.collider.gameObject.name == "First Person Controller")
 				{
+					print ("3");
 					audio.Play();
 					inSight = true;
 
 				}
 			}
-			if (Physics.Raycast(v3, dir4.normalized, out hit4, 1000))
-			{
+		//	if (Physics.Raycast(v3, dir4.normalized, out hit4, 1000))
+	//		{
+				
 				//print ("green "+hit3.collider.gameObject.name);
-				if (hit4.collider.gameObject.name == "First Person Controller")
-				{
-					audio.Play();
-					inSight = true;
-
-				}
-			}
+	//			if (hit4.collider.gameObject.name == "First Person Controller")
+	//			{
+	//				print ("4");
+	//				audio.Play();
+	//				inSight = true;
+			//
+			//	}
+		//	}
 			temp++;
 			temp2--;
 		}
@@ -141,8 +147,9 @@ public class PlayerSight: MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
 		//print ("Entered collision");
-   		if(other.gameObject.tag=="Player" &&  (!(Input.GetKey("v"))))
-    	inSight = true;   
+   		if(other.gameObject.tag=="Player" &&  (!(Input.GetKey("v")))&&(!(Input.GetKey("c"))))
+		{print ("Entered collision");
+    	inSight = true;   }
 	}
 	void calling()
 	{	
