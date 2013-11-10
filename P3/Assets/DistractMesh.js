@@ -13,7 +13,7 @@ private var yVelocity = 0.0;
 var smoothTime = 0.3;
 private var gameO:GameObject;
 private var startTime:float=0.0f;
-private var speed:float=0.0005f;
+private var speed:float=0.00005f;
 function Update()
 {
 	 if(pause)
