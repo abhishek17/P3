@@ -43,6 +43,7 @@ public class PlayerSight: MonoBehaviour
 		 playerg = GameObject.FindGameObjectWithTag("Player");
 		 player = playerg.transform;
 		 enemyStart = new Vector3(transform.position.x ,transform.position.y,transform.position.z);
+		 Screen.showCursor = false;
 	}
 	
 	void  Update (){

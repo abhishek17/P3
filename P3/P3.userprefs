@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DistractMesh.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerSight.cs">
     <Files>
-      <File FileName="Assets\DistractMesh.js" Line="16" Column="31" />
-      <File FileName="Assets\Crouch.js" Line="85" Column="43" />
-      <File FileName="Assets\PlayerSight.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" Line="1" Column="1" />
+      <File FileName="Assets\DistractMesh.js" Line="16" Column="34" />
+      <File FileName="Assets\Crouch.js" Line="1" Column="1" />
+      <File FileName="Assets\PlayerSight.cs" Line="46" Column="4" />
       <File FileName="Assets\DayNight.js" Line="1" Column="1" />
       <File FileName="Assets\FootSteps.js" Line="1" Column="1" />
       <File FileName="Assets\Restart.cs" Line="1" Column="1" />
