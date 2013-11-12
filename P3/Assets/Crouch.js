@@ -56,14 +56,14 @@ function Update(){
         pitch=runPitch;
     }
     if (Input.GetKey("v")){ // press v to crawl
-     if (Input.GetKey("w")||Input.GetKey("a")||Input.GetKey("s")||Input.GetKey("d")){
+     
         h = 0.05 * height;
         r=0.3*radius;
         speed = crawlSpeed; // slow down when crouching
         voice=crchSound;
         pitch=crchPitch;
         
-    }}
+    }
     
     if (Input.GetKeyDown("c")){ // press C to crouch
      

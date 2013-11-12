@@ -123,18 +123,18 @@ public class PlayerSight: MonoBehaviour
 					
 				}
 			}
-		//	if (Physics.Raycast(v3, dir4.normalized, out hit4, 1000))
-	//		{
+		//if (Physics.Raycast(v3, dir4.normalized, out hit4, 1000))
+		//{
 				
 				//print ("green "+hit3.collider.gameObject.name);
-	//			if (hit4.collider.gameObject.name == "First Person Controller")
-	//			{
-	//				print ("4");
-	//				audio.Play();
-	//				inSight = true;
-			//
-			//	}
-		//	}
+			//if (hit4.collider.gameObject.name == "First Person Controller")
+			//{
+				//print ("4");
+				//audio.Play();
+				//inSight = true;
+			
+			//}
+			//}
 			temp++;
 			temp2--;
 		}
