@@ -1,6 +1,7 @@
 ﻿var walkSpeed: float = 4; // regular speed
 var crchSpeed: float = 2; // crouching speed
 var crawlSpeed: float = 0.5f; // crouching speed
+var crawlSpeedS: float = 0.05f;
 var runSpeed: float = 8; // run speed
 var walkSound:float =0.5f; 
 var crchSound:float =0.05f;
@@ -9,6 +10,9 @@ var crchPitch:float=1.0f;
 var walkPitch:float=1.3f;
 var runPitch:float=1.8f;
 var toggle=false;
+var toggleC=false;
+
+//var slow : WalkEffect;
 
 private var chMotor: CharacterMotor;
 private var ch: CharacterController;
@@ -55,14 +59,17 @@ function Update(){
         speed = runSpeed;
         pitch=runPitch;
     }
-    if (Input.GetKey("v")){ // press v to crawl
+    if (Input.GetKey("e")){ // press v to crawl
      
         h = 0.05 * height;
         r=0.3*radius;
         speed = crawlSpeed; // slow down when crouching
         voice=crchSound;
         pitch=crchPitch;
-        
+       if(!Input.GetKey("w"))
+     {
+     	speed = crawlSpeedS;
+     } 
     }
     
     if (Input.GetKeyDown("c")){ // press C to crouch

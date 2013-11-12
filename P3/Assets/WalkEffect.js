@@ -22,6 +22,21 @@ private var translateChangex:float;
 private var totalAxes:float;
 private var totalAxesx:float;
 function Update () { 
+
+	if(!Input.GetKey("w"))
+	{
+		//private var timerx = 0.0; 
+ bobbingSpeedx = 0.03; 
+ bobbingAmountx = 0.1; 
+ midpointx = 0.5;
+	}
+	else
+	{
+		//private var timerx = 0.0; 
+ bobbingSpeedx = 0.09; 
+ bobbingAmountx = 0.2; 
+ midpointx = 0.5;	
+	}
     waveslice = 0.0; 
     horizontal = Input.GetAxis("Horizontal"); 
     vertical = Input.GetAxis("Vertical"); 
@@ -47,12 +62,12 @@ function Update () {
        
        totalAxes = Mathf.Clamp (totalAxes, 0.0, 1.0); 
        translateChange = totalAxes * translateChange; 
-       if (!Input.GetKey("v"))
+       if (!Input.GetKey("e"))
        transform.localPosition.y = midpoint + translateChange; 
         
     } 
     else { 
-    if (!Input.GetKey("v"))
+    if (!Input.GetKey("e"))
        transform.localPosition.y = midpoint; 
       
     } 
@@ -65,14 +80,15 @@ function Update () {
        totalAxesx = Mathf.Clamp (totalAxesx, 0.0, 1.0); 
        translateChangex = totalAxesx * translateChangex; 
        //transform.localPosition.y = midpoint + translateChange; 
-        if (Input.GetKey("v"))
+        if (Input.GetKey("e"))
         	{
-        		transform.localPosition.x = midpointx + translateChangex;	
+        		transform.localPosition.x = midpointx + translateChangex;
+        			
         	}
     } 
     else { 
        //transform.localPosition.y = midpoint; 
-       if (Input.GetKey("v"))
+       if (Input.GetKey("e"))
        {
        		transform.localPosition.x = midpointx; 
        }
