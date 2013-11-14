@@ -50,6 +50,8 @@
      <Compile Include="Assets\DistractMesh.js" />
      <Compile Include="Assets\EnemyTrack.js" />
      <Compile Include="Assets\FootSteps.js" />
+     <Compile Include="Assets\GoBack.js" />
+     <Compile Include="Assets\Movie.js" />
      <Compile Include="Assets\RayCast.js" />
      <Compile Include="Assets\StoneThrow.js" />
      <Compile Include="Assets\WalkEffect.js" />
